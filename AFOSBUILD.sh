@@ -1,0 +1,23 @@
+go build
+
+if [ $? -eq 0 ]
+then
+  # Result is OK! Just continue...
+  echo "Go build... PASS!"
+else
+  # houston we have a problem
+  exit 1
+fi
+
+strip gobuster
+
+if [ $? -eq 0 ]
+then
+  # Result is OK! Just continue...
+  echo "STRIP... PASS!"
+else
+  # houston we have a problem
+  exit 1
+fi
+
+cp -Rf gobuster /opt/ANDRAX/bin
